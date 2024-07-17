@@ -88,11 +88,11 @@ if (rotatingImage) {
       currentIndex = (currentIndex + 1) % imageUrls.length;
       rotatingImage.src = imageUrls[currentIndex];
       rotatingImage.style.opacity = '1';
-    }, 1000); // Adjust the duration to sync with CSS transition
+    }, 1000);
   }, 3000);
 }
 
-// Handle form submission
+
 const contactForm = document.getElementById('contactForm') as HTMLFormElement;
 contactForm.addEventListener('submit', async (e) => {
   e.preventDefault();
@@ -107,7 +107,7 @@ contactForm.addEventListener('submit', async (e) => {
   };
 
   try {
-    const response = await fetch('your-api-endpoint-url', {
+    const response = await fetch('https://your-laravel-api-url.vercel.app/api/messages', { // Use the deployed API URL
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
