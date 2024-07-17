@@ -11,41 +11,25 @@ export const About = () => {
         <div class="text-content">
           <h2>FullStack Developer | Web <br> & Software Development</h2>
           <span>
-            As a full-stack developer, I have built a comprehensive and diverse skill set that enables<br>
-             me to handle both front-end and back-end development tasks effectively. My journey in <br>
-              this field includes working on a variety of projects, such as replicating an e-commerce <br> 
-              website, collaborating on an  enrollment management system, and developing additional <br> 
-                applications like Medhouse and Shopery-Org-Web. These 
-            </span>
-            <span>
-               experiences have honed my <br>
-                technical proficiency and collaborative skills, preparing me to tackle complex  <br> 
-                development challenges. E-commerce Website Replication: Successfully replicated  <br>
-                 an e-commerce <br>website using the PHP framework Laravel. This project showcased my <br>
-             strong web development skills and deep understanding of e-commerce functionalities. <br>
-            </span>
-          <br><button id="readMoreButton">Read More...</button>
-          <div class="more-content" style="display: none;">
+        Dedicated Full Stack Developer with a robust skill set encompassing both front-end and <br>
+        back-end development. Utilizing tools like React, Typescript, Node.js, and Next.js to create <br>
+         dynamic, user-friendly web applications. Proficiency in developing responsive designs with <br>
+          Tailwind CSS and Bootstrap ensures seamless user experiences across  devices.On the backend, <br>
+           working with PHP and Laravel to build scalable, secure   server-side applications.
+          </span>
+            <div class="more-content" style="display: none, margin-top:"20px";">
             <!-- Hidden content initially -->
             <span>
-                Collaborative Project - Enrollment Management System: Worked <br>
-                 with two partners to develop an Enrollment Management System. <br>
-                  The project ran smoothly, highlighting my ability to work <br>
-                  effectively in a team and manage collaborative coding efforts.
-            Medhouse: After presenting several projects, I initiated and developed <br>
-             Medhouse. This project further solidified my full-stack development <br>
-             skills and my capability to deliver complete web solutions.
-            Shopery-Org-Web: Recently completed work on Shopery-Org-Web, <br>
-            demonstrating my ongoing commitment to expanding my portfolio <br>
-             and taking on new challenges in web development. These experiences <br>
-              highlight my proficiency in full-stack development, my collaborative <br>
-               work ethic, and my dedication to continuous learning and project completion.
-
-        
+            From crafting pixel-perfect interfaces to architecting complex server-side logic, 
+             committed to delivering high-quality, efficient solutions tailored to client needs. 
+              Let's connect to bring your next project to life with the expertise and passion  
+              infused into every line of code.
             </span>
           </div>
+          <br><button id="readMoreButton">Read More...</button>
+        
         </div>
       </div>
     </section>
   `;
-}
+};
