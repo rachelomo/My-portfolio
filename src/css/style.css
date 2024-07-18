@@ -1,11 +1,15 @@
 /* src/css/style.css */
 
 /* Global styles */
-body{
+html, body {
+  height: 100%;
   margin: 0;
+}
+body{
   padding: 0;
   font-family: Arial, sans-serif;
   box-sizing: border-box;
+  
 }
 
 /* Header styles */
@@ -144,7 +148,6 @@ section#home {
   align-items: center;
   background-color: #31065a;
   color: white;
-  padding: 20px;
   box-sizing: border-box;
   height: auto;
   min-height: 120vh;
@@ -393,8 +396,9 @@ h2 span {
 section#services {
   background-color: #31065a;
   color: white;
-  padding: 40px;
   box-sizing: border-box;
+  height: auto;
+  min-height: 100vh;
 }
 
 /* Other existing styles */
@@ -470,7 +474,8 @@ section#services {
 section#skills {
   background-color: #170550;
   color: white;
-  padding: 20px;
+  height: auto;
+  min-height: 100vh;
   box-sizing: border-box;
 }
 
@@ -554,7 +559,8 @@ section#skills {
 section#portfolio {
   background-color: #31065a;
   color: white;
-  padding: 20px;
+  min-height: 100vh;
+  height: auto;
   box-sizing: border-box;
 }
 
@@ -623,7 +629,7 @@ section#portfolio {
 /* Contact section styles */
 #contact {
   background-color: #170550;
-  
+  min-height: 100vh;
 }
 
 .contact-container {

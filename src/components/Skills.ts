@@ -17,7 +17,7 @@ export const Skills = () => {
           <div class="progress">
             <div class="progress-bar" style="width: 85%;"></div>
           </div>
-             <span>85%</span>
+          <span>85%</span>
         </div>
         <div class="skill">
           <span>Tailwind CSS</span>
@@ -26,7 +26,7 @@ export const Skills = () => {
           </div>
           <span>82%</span>
         </div>
-   <div class="skill">
+        <div class="skill">
           <span>React</span>
           <div class="progress">
             <div class="progress-bar" style="width: 80%;"></div>
@@ -38,50 +38,49 @@ export const Skills = () => {
           <div class="progress">
             <div class="progress-bar" style="width: 75%;"></div>
           </div>
-           <span>75%</span>
+          <span>75%</span>
         </div>
-      
         <div class="skill">
           <span>Node.js</span>
           <div class="progress">
             <div class="progress-bar" style="width: 75%;"></div>
           </div>
-           <span>75%</span>
+          <span>75%</span>
         </div>
         <div class="skill">
           <span>PHP</span>
           <div class="progress">
             <div class="progress-bar" style="width: 75%;"></div>
           </div>
-           <span>75%</span>
+          <span>75%</span>
         </div>
         <div class="skill">
           <span>Laravel</span>
           <div class="progress">
             <div class="progress-bar" style="width: 74%;"></div>
           </div>
-           <span>74%</span>
+          <span>74%</span>
         </div>
-            <div class="skill">
+        <div class="skill">
           <span>Nest.js</span>
           <div class="progress">
             <div class="progress-bar" style="width: 73%;"></div>
           </div>
-           <span>73%</span>
+          <span>73%</span>
         </div>
-           <div class="skill">
+        <div class="skill">
           <span>TypeScript</span>
           <div class="progress">
             <div class="progress-bar" style="width: 70%;"></div>
           </div>
-           <span>70%</span>
+          <span>70%</span>
         </div>
-               <div class="skill">
+        <div class="skill">
           <span>Bootstrap</span>
           <div class="progress">
             <div class="progress-bar" style="width: 60%;"></div>
           </div>
-           <span>60%</span>
+          <span>60%</span>
         </div>
       </div>
     </section>

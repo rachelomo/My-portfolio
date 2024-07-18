@@ -7,7 +7,7 @@ export const About = () => {
 
       <div class="about-content">
         <div class="image-container">
-          <img id="rotatingImage" src="/src/assets/vect.jpg" alt="Rotating Image" />
+          <img id="rotatingImage" src="/vect.jpg" alt="Rotating Image" />
         </div>
         <div class="text-content">
           <h2>FullStack Developer | Web <br> & Software Development</h2>
@@ -18,7 +18,7 @@ export const About = () => {
           Tailwind CSS and Bootstrap ensures seamless user experiences across  devices.On the backend, <br>
            working with PHP and Laravel to build scalable, secure   server-side applications.
           </span>
-            <div class="more-content" style="display: none, margin-top:"20px";">
+            <div class="more-content" style="display: none; margin-top:20px;">
             <!-- Hidden content initially -->
             <span>
             From crafting pixel-perfect interfaces to architecting complex server-side logic, committed to <br> 
@@ -28,7 +28,6 @@ export const About = () => {
           </div>
           <br><button id="readMoreButton">Read More...</button>
         </div>
-     
       </div>
     </section>
   `;
