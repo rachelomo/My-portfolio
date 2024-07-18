@@ -5,16 +5,17 @@ export const Contact = () => {
         <h2 style='color:white'>Contact</h2>
       </div>
       <div class="contact-container">
-      
         <div class="contact-info">
          
-          <p><img src="/src/assets/email.svg" alt="Logo" class="logo" id="logo" style="width:7%"/>
-     <a href="mailto:adebisirachael41@gmail.com">adebisirachael41@gmail.com</a></p>
+        <p style="display: flex; align-items: center; gap: 10px;">
+    <img src="/src/assets/email.svg" alt="Logo" class="logo" id="logo" style="width: 7%; filter: brightness(0) invert(1);" />
+    <a href="mailto:adebisirachael41@gmail.com" style="color: white; text-decoration: none;">adebisirachael41@gmail.com</a>
+</p>
         <div style="position:relative">
-    <img src="/src/assets/phone.png" alt="Logo" class="logo" id="logo" style="height: auto; filter: hue-rotate(60deg) saturate(100%);" />
-    <div style="position:absolute; top: 50%; left: 40%; transform: translate(-50%, -50%); text-align: center;">
-        <span><a href="tel:+08172892533">08172892533</a></span>
-        <span><a href="tel:+09049816706">09049816706</a></span>
+    <img src="/src/assets/phone.png" alt="Logo" class="logo" id="logo" style="height: auto; color:white; filter: brightness(0) invert(1);" />
+    <div style="position:absolute; top: 50%; left: 25%; transform: translate(-50%, -50%); text-align: center;">
+        <span><a href="tel:+23408172892533" style="color:white">08172892533</a></span><br>
+        <span><a href="tel:+23409049816706"style="color:white">09049816706</a></span>
     </div>
 </div>
         </div>
