@@ -14,23 +14,24 @@ import 'toastr/build/toastr.min.css';
 import toastr from 'toastr';
 
 // Configure Toastr
-toastr.options = {
+const toastConfig = {
   closeButton: true,
   debug: false,
   newestOnTop: true,
   progressBar: true,
   positionClass: 'toast-top-right',
   preventDuplicates: true,
-  onclick: null,
-  showDuration: '300',
-  hideDuration: '1000',
-  timeOut: '5000',
-  extendedTimeOut: '1000',
+  onclick: null as ((ev: Event) => void) | null,
+  showDuration: 300,  // Converted to number
+  hideDuration: 1000, // Converted to number
+  timeOut: 5000,      // Converted to number
+  extendedTimeOut: 1000, // Converted to number
   showEasing: 'swing',
   hideEasing: 'linear',
   showMethod: 'fadeIn',
   hideMethod: 'fadeOut'
 };
+
 
 // Main function to render components
 const Main = (): string => {
