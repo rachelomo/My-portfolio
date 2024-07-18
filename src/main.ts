@@ -13,24 +13,30 @@ import { Footer } from './components/Footer';
 import 'toastr/build/toastr.min.css';
 import toastr from 'toastr';
 
-// Configure Toastr
-const toastConfig = {
+// Define the toastConfig with proper types
+const toastConfig: ToastrOptions = {
   closeButton: true,
   debug: false,
   newestOnTop: true,
   progressBar: true,
   positionClass: 'toast-top-right',
   preventDuplicates: true,
-  onclick: null as ((ev: Event) => void) | null,
-  showDuration: 300,  // Converted to number
-  hideDuration: 1000, // Converted to number
-  timeOut: 5000,      // Converted to number
-  extendedTimeOut: 1000, // Converted to number
+  onclick: undefined,  // Change from null to undefined
+  showDuration: 300,
+  hideDuration: 1000,
+  timeOut: 5000,
+  extendedTimeOut: 1000,
   showEasing: 'swing',
   hideEasing: 'linear',
   showMethod: 'fadeIn',
   hideMethod: 'fadeOut'
 };
+
+// Apply the toastConfig
+toastr.options = toastConfig;
+
+// Example usage
+toastr.success('This is a success message!');
 
 
 // Main function to render components
