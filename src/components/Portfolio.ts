@@ -7,30 +7,30 @@ export const Portfolio = () => {
         <div class="portfolio-content">
      <div class="first_div">        
       <div class="portfolio-image">
-          <img id="portImage" src="/src/assets/web.jpg" alt="Rotating Image" />
+          <img id="portImage" src="/src/assets/coding-interface.png" alt="Rotating Image" />
         </div>
               <div class="portfolio-image">
-          <img id="portImage" src="/src/assets/web.jpg" alt="Rotating Image" />
+          <img id="portImage" src="/src/assets/coding-interface.png" alt="Rotating Image" />
         </div>
               <div class="portfolio-image">
-          <img id="portImage" src="/src/assets/web.jpg" alt="Rotating Image" />
+          <img id="portImage" src="/src/assets/coding-interface.png" alt="Rotating Image" />
         </div>
               <div class="portfolio-image">
-          <img id="portImage" src="/src/assets/web.jpg" alt="Rotating Image" />
+          <img id="portImage" src="/src/assets/coding-interface.png" alt="Rotating Image" />
         </div>
         </div>
         <div class="second_div">
               <div class="portfolio-image">
-          <img id="portImage" src="/src/assets/web.jpg" alt="Rotating Image" />
+          <img id="portImage" src="/src/assets/coding-interface.png" alt="Rotating Image" />
         </div>
               <div class="portfolio-image">
-          <img id="portImage" src="/src/assets/web.jpg" alt="Rotating Image" />
+          <img id="portImage" src="/src/assets/coding-interface.png" alt="Rotating Image" />
         </div>
               <div class="portfolio-image">
-          <img id="portImage" src="/src/assets/web.jpg" alt="Rotating Image" />
+          <img id="portImage" src="/src/assets/coding-interface.png" alt="Rotating Image" />
         </div>
               <div class="portfolio-image">
-          <img id="portImage" src="/src/assets/web.jpg" alt="Rotating Image" />
+          <img id="portImage" src="/src/assets/coding-interface.png" alt="Rotating Image" />
         </div>
         </div>
         </div>

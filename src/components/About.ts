@@ -2,11 +2,12 @@ export const About = () => {
   return `
     <section id='about'>
       <div class="about-header">
-        <h2 class='col'>About <span>Me</span></h2>
+        <h2 class='col'>About<span>Me</span></h2>
       </div>
+
       <div class="about-content">
         <div class="image-container">
-          <img id="rotatingImage" src="/src/assets/web.jpg" alt="Rotating Image" />
+          <img id="rotatingImage" src="/src/assets/vect.jpg" alt="Rotating Image" />
         </div>
         <div class="text-content">
           <h2>FullStack Developer | Web <br> & Software Development</h2>
@@ -20,15 +21,14 @@ export const About = () => {
             <div class="more-content" style="display: none, margin-top:"20px";">
             <!-- Hidden content initially -->
             <span>
-            From crafting pixel-perfect interfaces to architecting complex server-side logic, 
-             committed to delivering high-quality, efficient solutions tailored to client needs. 
-              Let's connect to bring your next project to life with the expertise and passion  
-              infused into every line of code.
+            From crafting pixel-perfect interfaces to architecting complex server-side logic, committed to <br> 
+            delivering high-quality, efficient solutions tailored to client needs. Let's connect to bring <br> 
+            your next project to life with the expertise and passion infused into every line of code.
             </span>
           </div>
           <br><button id="readMoreButton">Read More...</button>
-        
         </div>
+     
       </div>
     </section>
   `;

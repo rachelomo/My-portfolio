@@ -9,6 +9,29 @@ import { Portfolio } from './components/Portfolio';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 
+// Import Toastr
+import 'toastr/build/toastr.min.css';
+import toastr from 'toastr';
+
+// Configure Toastr
+toastr.options = {
+  closeButton: true,
+  debug: false,
+  newestOnTop: true,
+  progressBar: true,
+  positionClass: 'toast-top-right',
+  preventDuplicates: true,
+  onclick: null,
+  showDuration: '300',
+  hideDuration: '1000',
+  timeOut: '5000',
+  extendedTimeOut: '1000',
+  showEasing: 'swing',
+  hideEasing: 'linear',
+  showMethod: 'fadeIn',
+  hideMethod: 'fadeOut'
+};
+
 // Main function to render components
 const Main = (): string => {
   return `
@@ -98,13 +121,15 @@ document.addEventListener('DOMContentLoaded', () => {
           section.style.display = 'none';
         });
         const targetSection = document.getElementById(targetId);
-        if (targetId === 'home') {
-          targetSection!.style.display = 'flex';
-          targetSection!.style.backgroundColor = '#31065a';
-          targetSection!.style.color = 'white';
-          targetSection!.style.height = '78vh';
-        } else {
-          targetSection!.style.display = 'block';
+        if (targetSection) {
+          if (targetId === 'home') {
+            targetSection.style.display = 'flex';
+            targetSection.style.backgroundColor = '#31065a';
+            targetSection.style.color = 'white';
+            targetSection.style.height = '78vh';
+          } else {
+            targetSection.style.display = 'block';
+          }
         }
         // Hide the navigation on small screens after clicking a link
         const nav = document.querySelector('nav');
@@ -117,28 +142,34 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Add event listener to logo
-    document.getElementById('logo')!.addEventListener('click', () => {
-      document.querySelectorAll<HTMLElement>('section').forEach(section => {
-        section.style.display = 'none';
+    const logoElement = document.getElementById('logo');
+    if (logoElement) {
+      logoElement.addEventListener('click', () => {
+        document.querySelectorAll<HTMLElement>('section').forEach(section => {
+          section.style.display = 'none';
+        });
+        const homeSection = document.getElementById('home');
+        if (homeSection) {
+          homeSection.style.display = 'flex';
+          homeSection.style.backgroundColor = '#31065a';
+          homeSection.style.color = 'white';
+          homeSection.style.height = '78vh';
+        }
+        // Hide the navigation on small screens after clicking the logo
+        const nav = document.querySelector('nav');
+        if (window.innerWidth <= 768 && nav) {
+          nav.style.display = 'none';
+          document.getElementById('closeIcon')!.style.display = 'none';
+          document.getElementById('menuIcon')!.style.display = 'block';
+        }
       });
-      const homeSection = document.getElementById('home');
-      homeSection!.style.display = 'flex';
-      homeSection!.style.backgroundColor = '#31065a';
-      homeSection!.style.color = 'white';
-      homeSection!.style.height = '78vh';
-      // Hide the navigation on small screens after clicking the logo
-      const nav = document.querySelector('nav');
-      if (window.innerWidth <= 768 && nav) {
-        nav.style.display = 'none';
-        document.getElementById('closeIcon')!.style.display = 'none';
-        document.getElementById('menuIcon')!.style.display = 'block';
-      }
-    });
+    }
 
     // Image rotation logic
     const imageUrls = [
-      '/src/assets/web.jpg',
-      '/src/assets/portfolio.jpg',
+      "/src/assets/coding-interface.png",
+      '/src/assets/code-text.png',
+      "/src/assets/development-and-coding.png"
     ];
 
     let currentIndex = 0;
@@ -152,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
           rotatingImage.src = imageUrls[currentIndex];
           rotatingImage.style.opacity = '1';
         }, 1500);
-      }, 3000);
+      }, 4000);
     }
 
     // Initialize "Read More" toggle functionality
@@ -161,38 +192,41 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize menu toggle functionality
     handleMenuToggle();
 
-    // Add submit event listener to contact form
-    const contactForm = document.getElementById('contactForm') as HTMLFormElement;
-    contactForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
+    // Contact form submission handler
+    const handleSubmit = async (event: Event) => {
+      event.preventDefault();
 
-      const formData = new FormData(contactForm);
-      const data = {
-        name: formData.get('name') as string,
-        email: formData.get('email') as string,
-        phone: formData.get('phone') as string,
-        subject: formData.get('subject') as string,
-        message: formData.get('message') as string,
-      };
+      const form = document.getElementById('contactForm') as HTMLFormElement;
+      const formData = new FormData(form);
+
+      console.log('Form data:', Object.fromEntries(formData.entries())); // Log form data for debugging
 
       try {
-        const response = await fetch('https://my-laravel-project.vercel.app/api/messages', {
+        const response = await fetch('https://formspree.io/f/xblrlvjq', {
           method: 'POST',
+          body: formData,
           headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data),
+            'Accept': 'application/json'
+          }
         });
 
-        if (response.ok) {
-          alert('Message sent successfully!');
-          contactForm.reset();
-        } else {
-          console.error('Error:', response.statusText);
+        console.log('Response status:', response.status); // Log response status
+
+        if (!response.ok) {
+          throw new Error('Network response was not ok.');
         }
+
+        toastr.success('Message sent successfully!');
+        form.reset();
       } catch (error) {
+        toastr.error('Error: Could not send message. Please try again later.');
         console.error('Error:', error);
       }
-    });
+    };
+
+    const formElement = document.getElementById('contactForm');
+    if (formElement) {
+      formElement.addEventListener('submit', handleSubmit);
+    }
   }
 });

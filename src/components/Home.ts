@@ -12,16 +12,16 @@ export const Home = () => {
         <br />
         <a style="text-align:center" id="hireMeButton" href="/src/assets/cv.pdf" download>Download CV</a>
         <div id="social-icons">
-          <a href="https://www.linkedin.com/in/rachael-adebisi" target="_blank" rel="noopener noreferrer">
-            <img src="/src/assets/icons8-linkedin.svg" alt="LinkedIn" />
+          <a href="https://www.linkedin.com/in/rachael-adebisi-0b4543291" target="_blank" rel="noopener noreferrer">
+            <img src="/src/assets/images_linkdin.png" alt="LinkedIn" />
           </a>
           <a href="https://github.com/rachelomo" target="_blank" rel="noopener noreferrer">
-            <img src="/src/assets/icons8-github.svg" alt="GitHub" />
+            <img src="/src/assets/icons8-github.svg" alt="GitHub"/>
           </a>
         </div>
       </div>
       <div>
-        <img id="rotatingImage" src="/src/assets/web.jpg" alt="Rotating Image" />
+        <img id="rotatingImage" src="/src/assets/coding-interface.png" alt="Rotating Image" />
       </div>
     </section>
   `;
