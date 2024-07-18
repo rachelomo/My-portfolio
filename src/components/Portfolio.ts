@@ -7,7 +7,7 @@ export const Portfolio = () => {
       <div class="portfolio-content">
         <div class="first_div">        
           <div class="portfolio-image">
-            <img id="portImage" src="/src/assets/coding-interface.png" alt="Project Image 1" />
+            <img id="portImage" src="/coding-interface.png" alt="Project Image 1" />
           </div>
           <div class="portfolio-image">
             <img id="portImage" src="/coding-interface.png" alt="Project Image 2" />

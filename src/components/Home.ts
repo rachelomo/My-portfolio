@@ -13,7 +13,7 @@ export const Home = () => {
         <a style="text-align:center" id="hireMeButton" href="/src/assets/cv.pdf" download>Download CV</a>
         <div id="social-icons">
           <a href="https://www.linkedin.com/in/rachael-adebisi-0b4543291" target="_blank" rel="noopener noreferrer">
-            <img src="/images/linkedin.png" alt="LinkedIn" />
+            <img src="/images_linkdin.png" alt="LinkedIn" />
           </a>
           <a href="https://github.com/rachelomo" target="_blank" rel="noopener noreferrer">
             <img src="/icons8-github.svg" alt="GitHub"/>

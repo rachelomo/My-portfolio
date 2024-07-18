@@ -167,9 +167,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Image rotation logic
     const imageUrls = [
-      "/src/assets/coding-interface.png",
-      '/src/assets/code-text.png',
-      "/src/assets/development-and-coding.png"
+      "/coding-interface.png",
+      '/code-text.png',
+      "/development-and-coding.png"
     ];
 
     let currentIndex = 0;
