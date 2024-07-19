@@ -10,7 +10,7 @@ export const Home = () => {
           Solutions | Specializing in Frontend & Backend Development | Let's connect!
         </span>
         <br />
-        <a style="text-align:center" id="hireMeButton" href="/src/assets/cv.pdf" download>Download CV</a>
+        <a style="text-align:center" id="hireMeButton" href="/Oluwaseun_FullStack_Developer_CV.pdf" download>Download CV</a>
         <div id="social-icons">
           <a href="https://www.linkedin.com/in/rachael-adebisi-0b4543291" target="_blank" rel="noopener noreferrer">
             <img src="/images_linkdin.png" alt="LinkedIn" />
