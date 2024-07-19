@@ -8,12 +8,10 @@ import { Skills } from './components/Skills';
 import { Portfolio } from './components/Portfolio';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
-
-// Import Toastr
 import 'toastr/build/toastr.min.css';
 import toastr from 'toastr';
 
-// Define the toastConfig with proper types
+
 const toastConfig: ToastrOptions = {
   closeButton: true,
   debug: false,
@@ -21,7 +19,7 @@ const toastConfig: ToastrOptions = {
   progressBar: true,
   positionClass: 'toast-top-right',
   preventDuplicates: true,
-  onclick: undefined,  // Change from null to undefined
+  onclick: undefined,  
   showDuration: 300,
   hideDuration: 1000,
   timeOut: 5000,
@@ -32,14 +30,13 @@ const toastConfig: ToastrOptions = {
   hideMethod: 'fadeOut'
 };
 
-// Apply the toastConfig
 toastr.options = toastConfig;
 
-// Example usage
+
 toastr.success('This is a success message!');
 
 
-// Main function to render components
+
 const Main = (): string => {
   return `
     ${Header()}
@@ -55,14 +52,13 @@ const Main = (): string => {
   `;
 };
 
-// Function to handle toggling of "Read More" content
+//"Read More" Function 
 const handleReadMoreToggle = (): void => {
   const readMoreButton = document.getElementById('readMoreButton');
   const moreContent = document.querySelector('.more-content') as HTMLElement | null;
 
   if (readMoreButton && moreContent) {
     readMoreButton.addEventListener('click', () => {
-      // Toggle the display of the additional content
       if (moreContent.style.display === 'none' || !moreContent.style.display) {
         moreContent.style.display = 'block';
         readMoreButton.textContent = 'Read Less';
@@ -71,16 +67,15 @@ const handleReadMoreToggle = (): void => {
         readMoreButton.textContent = 'Read More...';
       }
 
-      // Ensure the button is moved below the expanded content
+     
       if (moreContent.style.display === 'block') {
-        // Scroll to the expanded content
         moreContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     });
   }
 };
 
-// Function to handle menu toggle
+//menu toggle Function
 const handleMenuToggle = (): void => {
   const menuIcon = document.getElementById('menuIcon');
   const closeIcon = document.getElementById('closeIcon');
@@ -101,13 +96,11 @@ const handleMenuToggle = (): void => {
   }
 };
 
-// Render Main into the #app div after DOM is loaded
+// Render
 document.addEventListener('DOMContentLoaded', () => {
   const appContainer = document.querySelector<HTMLDivElement>('#app');
   if (appContainer) {
     appContainer.innerHTML = Main();
-
-    // Hide all sections except Home initially
     document.querySelectorAll<HTMLElement>('section').forEach(section => {
       if (section.id !== 'home') {
         section.style.display = 'none';
@@ -119,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Add event listeners to navigation links
+    // Add listeners navigation
     document.querySelectorAll<HTMLAnchorElement>('nav ul li a').forEach(link => {
       link.addEventListener('click', (e) => {
         e.preventDefault();
@@ -138,7 +131,6 @@ document.addEventListener('DOMContentLoaded', () => {
             targetSection.style.display = 'block';
           }
         }
-        // Hide the navigation on small screens after clicking a link
         const nav = document.querySelector('nav');
         if (window.innerWidth <= 768 && nav) {
           nav.style.display = 'none';
@@ -148,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // Add event listener to logo
+    //event listener to logo
     const logoElement = document.getElementById('logo');
     if (logoElement) {
       logoElement.addEventListener('click', () => {
@@ -162,7 +154,6 @@ document.addEventListener('DOMContentLoaded', () => {
           homeSection.style.color = 'white';
           homeSection.style.height = '78vh';
         }
-        // Hide the navigation on small screens after clicking the logo
         const nav = document.querySelector('nav');
         if (window.innerWidth <= 768 && nav) {
           nav.style.display = 'none';
@@ -193,20 +184,17 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 4000);
     }
 
-    // Initialize "Read More" toggle functionality
+    
     handleReadMoreToggle();
 
-    // Initialize menu toggle functionality
     handleMenuToggle();
-
-    // Contact form submission handler
     const handleSubmit = async (event: Event) => {
       event.preventDefault();
 
       const form = document.getElementById('contactForm') as HTMLFormElement;
       const formData = new FormData(form);
 
-      console.log('Form data:', Object.fromEntries(formData.entries())); // Log form data for debugging
+      console.log('Form data:', Object.fromEntries(formData.entries()));
 
       try {
         const response = await fetch('https://formspree.io/f/xblrlvjq', {
@@ -217,7 +205,7 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         });
 
-        console.log('Response status:', response.status); // Log response status
+        console.log('Response status:', response.status);
 
         if (!response.ok) {
           throw new Error('Network response was not ok.');
