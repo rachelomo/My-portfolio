@@ -1,3 +1,7 @@
+export const metadata: metadata ={
+  title:"about page"
+}
+
 export const About = () => {
   return `
     <section id='about'>

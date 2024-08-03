@@ -13,9 +13,9 @@ export const Header = () => {
           <li><a href="#portfolio">Portfolio</a></li>
           <li><a href="#contact">Contact</a></li>
           <a href="mailto:Adebisirachael41@gmail.com"><button id="hirButton">Hire Me</button></a>
-        </ul>
+          </ul>
       </nav>
       <a href="mailto:Adebisirachael41@gmail.com"><button id="hireButton">Hire Me</button></a>
-    </header>
+      </header>
   `;
 };

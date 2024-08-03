@@ -11,7 +11,6 @@ import { Footer } from './components/Footer';
 import 'toastr/build/toastr.min.css';
 import toastr from 'toastr';
 
-
 const toastConfig: ToastrOptions = {
   closeButton: true,
   debug: false,
@@ -32,10 +31,11 @@ const toastConfig: ToastrOptions = {
 
 toastr.options = toastConfig;
 
-
 toastr.success('This is a success message!');
 
-
+const updateTitle = (title: string) => {
+  document.title = `RachaelWebPortfolio/${title}`;
+};
 
 const Main = (): string => {
   return `
@@ -52,7 +52,7 @@ const Main = (): string => {
   `;
 };
 
-//"Read More" Function 
+// "Read More" Function 
 const handleReadMoreToggle = (): void => {
   const readMoreButton = document.getElementById('readMoreButton');
   const moreContent = document.querySelector('.more-content') as HTMLElement | null;
@@ -67,7 +67,6 @@ const handleReadMoreToggle = (): void => {
         readMoreButton.textContent = 'Read More...';
       }
 
-     
       if (moreContent.style.display === 'block') {
         moreContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
@@ -75,7 +74,7 @@ const handleReadMoreToggle = (): void => {
   }
 };
 
-//menu toggle Function
+// Menu toggle Function
 const handleMenuToggle = (): void => {
   const menuIcon = document.getElementById('menuIcon');
   const closeIcon = document.getElementById('closeIcon');
@@ -109,6 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
         section.style.backgroundColor = '#31065a';
         section.style.color = 'white';
         section.style.height = '78vh';
+        updateTitle('Home');
       }
     });
 
@@ -130,6 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
           } else {
             targetSection.style.display = 'block';
           }
+          updateTitle(targetId.charAt(0).toUpperCase() + targetId.slice(1));
         }
         const nav = document.querySelector('nav');
         if (window.innerWidth <= 768 && nav) {
@@ -140,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    //event listener to logo
+    // Event listener to logo
     const logoElement = document.getElementById('logo');
     if (logoElement) {
       logoElement.addEventListener('click', () => {
@@ -154,6 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
           homeSection.style.color = 'white';
           homeSection.style.height = '78vh';
         }
+        updateTitle('Home');
         const nav = document.querySelector('nav');
         if (window.innerWidth <= 768 && nav) {
           nav.style.display = 'none';
@@ -184,10 +186,9 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 4000);
     }
 
-    
     handleReadMoreToggle();
-
     handleMenuToggle();
+
     const handleSubmit = async (event: Event) => {
       event.preventDefault();
 
